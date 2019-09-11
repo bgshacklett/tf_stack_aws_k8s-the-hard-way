@@ -42,9 +42,11 @@ created:
 * An AWS VPC—[Terraform AWS Modules :: terraform-aws-vpc](https://github.com/terraform-aws-modules/terraform-aws-vpc)
     * Three public subnets
     * Three private subnets
-* EC2 Instances (six total)
-    * Three instances to function as Master nodes
-    * Three instances to function as worker nodes
+* EC2 Instances (seven total)
+    * One Bastion instance in a Public subnet
+    * Three instances to function as Kubernetes Master nodes in Private subnets
+    * Three instances to function as Kubernetes worker nodes in Private subnets
+* A Load Balancer for the Kubernetes API in the Public subnets
 
 An exhaustive list of every resource may be generated prior to applying by
 running `terraform plan`.
