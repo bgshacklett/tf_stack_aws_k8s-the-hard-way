@@ -3,16 +3,16 @@ variable "vpc_id" {
 }
 
 variable "public_subnet" {
-  type        = "list"
+  type        = list
   description = "A list of public subnets"
 }
 
 variable "private_subnet" {
-  type        = "list"
+  type        = list
   description = "A list of private subnets"
 }
 
 variable "stack_tags" {
-  type        = "map"
+  type        = map
   description = "A map of tags designated at the stack level"
 }

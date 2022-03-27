@@ -1,7 +1,7 @@
 resource "aws_security_group" "k8s_lb" {
   name        = "Kubernetes API Load Balancer"
   description = "Control traffic to/from the Kubernetes API Load Balancer"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 }
 
 # General ingress

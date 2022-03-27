@@ -1,7 +1,7 @@
 resource "aws_security_group" "k8s_master" {
   name        = "Kubernetes Master"
   description = "Control traffic to/from the Kubernetes Master instance(s)"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 }
 
 # Self-referential ingress

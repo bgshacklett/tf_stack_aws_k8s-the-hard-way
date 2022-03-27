@@ -35,7 +35,7 @@ data "aws_ami" "ubuntu" {
 
 # Instances
 resource "aws_instance" "bastion" {
-  ami                         = "${data.aws_ami.ubuntu.id}"
+  ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t3.micro"
   key_name                    = aws_key_pair.lab.key_name
   subnet_id                   = var.public_subnet[0]
@@ -55,7 +55,7 @@ resource "aws_instance" "bastion" {
 resource "aws_instance" "master" {
   count = 3
 
-  ami             = "${data.aws_ami.ubuntu.id}"
+  ami             = data.aws_ami.ubuntu.id
   instance_type   = "t3.micro"
   key_name        = aws_key_pair.lab.key_name
   subnet_id       = element(var.private_subnet, count.index)
@@ -74,7 +74,7 @@ resource "aws_instance" "master" {
 resource "aws_instance" "worker" {
   count = 3
 
-  ami             = "${data.aws_ami.ubuntu.id}"
+  ami             = data.aws_ami.ubuntu.id
   instance_type   = "t3.micro"
   key_name        = aws_key_pair.lab.key_name
   subnet_id       = element(var.private_subnet, count.index)

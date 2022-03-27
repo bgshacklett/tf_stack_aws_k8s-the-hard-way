@@ -13,9 +13,9 @@ module "vpc" {
   enable_dns_hostnames = true
 
   tags = merge(
-                local.common_tags,
-                { },
-              )
+    local.common_tags,
+    {},
+  )
 }
 
 module "k8s" {
@@ -23,8 +23,8 @@ module "k8s" {
   vpc_id         = module.vpc.vpc_id
   public_subnet  = module.vpc.public_subnets
   private_subnet = module.vpc.private_subnets
-  stack_tags     = merge(
-                          local.common_tags,
-                          {},
-                        )
+  stack_tags = merge(
+    local.common_tags,
+    {},
+  )
 }

@@ -1,7 +1,7 @@
 resource "aws_security_group" "bastion" {
   name        = "Bastion"
   description = "Control traffic to/from the bastion instance"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 }
 
 resource aws_security_group_rule "allow_ssh_from_all_to_bastion" {
@@ -12,7 +12,7 @@ resource aws_security_group_rule "allow_ssh_from_all_to_bastion" {
   protocol          = "tcp"
   cidr_blocks       = [
                         "0.0.0.0/0",
-                      ] 
+                      ]
 }
 
 resource aws_security_group_rule "allow_ssh_from_bastion_to_vpc" {

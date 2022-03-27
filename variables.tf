@@ -8,19 +8,15 @@ variable "vpc_cidr" {
 
 variable "availability_zone" {
   description = "A list of availability zones to use"
-  type        = "list"
+  type        = list(any)
 }
 
 variable "public_subnet_cidr" {
   description = "A list of public subnet CIDR ranges"
-  type        = "list"
+  type        = list(any)
 }
 
 variable "private_subnet_cidr" {
   description = "A list of private subnet CIDR ranges"
-  type        = "list"
+  type        = list(any)
 }
-
-#variable "" {
-#  description = ""
-#}

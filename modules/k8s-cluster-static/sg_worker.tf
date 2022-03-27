@@ -1,7 +1,7 @@
 resource "aws_security_group" "k8s_worker" {
   name        = "Kubernetes Worker"
   description = "Control traffic to/from the Kubernetes Worker instance(s)"
-  vpc_id      = "${var.vpc_id}"
+  vpc_id      = var.vpc_id
 }
 
 # Self-referential ingress
