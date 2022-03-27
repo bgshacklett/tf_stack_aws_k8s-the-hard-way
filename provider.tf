@@ -1,5 +1,5 @@
 # Configure the AWS Provider
 provider "aws" {
-  region  = "us-east-2"
+  region  = var.aws_region
   profile = "k8s-lab"
 }

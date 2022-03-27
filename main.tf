@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=v2.15.0"
+  source = "terraform-aws-modules/vpc/aws"
 
   name = "Kubernetes the Hard Way"
 
@@ -9,6 +9,7 @@ module "vpc" {
   private_subnets = var.private_subnet_cidr
 
   enable_nat_gateway   = true
+  single_nat_gateway   = true
   enable_vpn_gateway   = false
   enable_dns_hostnames = true
 
