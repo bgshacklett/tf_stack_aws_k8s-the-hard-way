@@ -22,7 +22,7 @@ the generated instances. That's the user's job as a student!
 
 ## Requirements
 * An active AWS account
-* Terraform version 0.12.x
+* Terraform version 1.1.x
 
 ## Steps to Apply
 
